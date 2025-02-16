@@ -1,1 +1,0 @@
-0 2 * * * /usr/bin/python3 /home/pi/python_rpi/rpi_miningm_stats.py
