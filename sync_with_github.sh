@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigate to the project directory
-cd /home/pi/python_rpi
+cd /home/pi/python_rpi3
 
 # Add all changes to git
 git add .
