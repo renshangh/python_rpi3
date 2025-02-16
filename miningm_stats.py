@@ -82,7 +82,7 @@ def crawl_mining_miners(url):
         # Wait for the element with class name " group" to be present, with a timeout of 120 seconds
         locator = (By.TAG_NAME, "hope")
         try:
-            element = WebDriverWait(driver, 5).until(
+            element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((locator))
             )
         except:
@@ -95,7 +95,7 @@ def crawl_mining_miners(url):
             rows = tbody.find_elements(By.TAG_NAME, 'tr')
             
             # Open the CSV file for appending
-            with open('/tmp/miners.csv', 'a', newline='') as csvfile:
+            with open('miners.csv', 'a', newline='') as csvfile:
                 csvwriter = csv.writer(csvfile)
                 
                 # Write the data rows
@@ -126,9 +126,11 @@ if __name__ == '__main__':
     while True:
         # Crawl the mining stats
         crawl_mining_stats(url_randytx)
-        sleep(300)  # Sleep for 5 minutes
-
-        # Check if 8 hours have passed since the last miner crawl
+        
+        # Check if 12 hours have passed since the last miner crawl
         if datetime.now() - last_miner_crawl >= timedelta(hours=12):
             crawl_mining_miners(url_miners)
             last_miner_crawl = datetime.now()  # Update the last crawl time
+
+        # Sleep for 5 minutes before the next crawl
+        sleep(300)  # 300 seconds = 5 minutes
