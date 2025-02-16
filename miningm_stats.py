@@ -133,5 +133,5 @@ if __name__ == '__main__':
             crawl_mining_miners(url_miners)
             last_miner_crawl = datetime.now()  # Update the last crawl time
 
-        # Sleep for 5 minutes before the next crawl
-        sleep(300)  # 300 seconds = 5 minutes
+        # Sleep for 10 minutes before the next crawl
+        sleep(600)  # 600 seconds = 10 minutes
