@@ -55,7 +55,7 @@ try:
                     if len(data[4]) == 16:  # Format is '%Y-%m-%d %H:%M'
                         data[4] += ':00'  # Append ':00' to match '%Y-%m-%d %H:%M:%S'
                     # insert the current date and time into the data
-                    data.insert(0, datetime.now(pytz.timezone('US/Central')).strftime('%Y-%m-%d %H:%M:%S'))
+                    data.insert(0, datetime.now(pytz.timezone('US/Eastern')).strftime('%Y-%m-%d %H:%M:%S'))
                     csvwriter.writerow(data)
 finally:
     driver.quit()
