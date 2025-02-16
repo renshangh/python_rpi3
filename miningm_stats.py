@@ -37,14 +37,15 @@ def crawl_mining_stats(url):
             
             # Open the CSV file for appending
             file_exists = os.path.isfile('randytx.csv')
-            with open('randytx.csv', 'a', newline='') as csvfile:
+            with open('/home/pi/data/randytx.csv', 'a', newline='') as csvfile:
                 csvwriter = csv.writer(csvfile)
                 
                 # Write the header if the file is new
+                """
                 if not file_exists:
                     header = ['Timestamp', 'Column1', 'Column2', 'Column3', 'Column4', 'Column5', 'Column6']
                     csvwriter.writerow(header)
-                
+                """
                 # Write the data rows
                 for row in rows:
                     columns = row.find_elements(By.TAG_NAME, 'td')
@@ -95,7 +96,7 @@ def crawl_mining_miners(url):
             rows = tbody.find_elements(By.TAG_NAME, 'tr')
             
             # Open the CSV file for appending
-            with open('miners.csv', 'a', newline='') as csvfile:
+            with open('/home/pi/data/miners.csv', 'a', newline='') as csvfile:
                 csvwriter = csv.writer(csvfile)
                 
                 # Write the data rows
