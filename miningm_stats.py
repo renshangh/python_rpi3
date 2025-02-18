@@ -120,13 +120,14 @@ def crawl_mining_miners(url):
 
 
 if __name__ == '__main__':
-    url_randytx = 'https://www.f2pool.com/mining-user-ltc/0522834fec2c2ec908e2da44bc259f5e?user_name=randytx'
+    # url_randytx = 'https://www.f2pool.com/mining-user-ltc/0522834fec2c2ec908e2da44bc259f5e?user_name=randytx'
+    url_alteri = 'https://www.f2pool.com/mining-user-ltc/b14a02d50e02d801684ac9581bf24e1b?user_name=randy2ltc' 
     url_miners = 'https://www.f2pool.com/miners'
     last_miner_crawl = datetime.now() - timedelta(hours=12)  # Initialize to ensure the first run
 
     while True:
         # Crawl the mining stats
-        crawl_mining_stats(url_randytx)
+        crawl_mining_stats(url_alteri)
         
         # Check if 12 hours have passed since the last miner crawl
         if datetime.now() - last_miner_crawl >= timedelta(hours=12):
