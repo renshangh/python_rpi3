@@ -37,7 +37,7 @@ def crawl_mining_stats(url):
             
             # Open the CSV file for appending
             file_exists = os.path.isfile('randytx.csv')
-            with open('/home/pi/data/randytx.csv', 'a', newline='') as csvfile:
+            with open('/home/pi/data/mininglogs.csv', 'a', newline='') as csvfile:
                 csvwriter = csv.writer(csvfile)
                 
                 # Write the header if the file is new
